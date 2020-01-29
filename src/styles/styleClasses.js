@@ -5,6 +5,54 @@
 
 
 const styles = theme => ({
+
+  statusIndicator:{
+    display:'block',
+    padding: '5px'
+  },
+  statusIndicatorText1:{
+    backgroundColor:'#727e84',
+    color: '#fff',
+    padding:'0 5px',
+    border:'1px solid #727e84',
+    borderRadius: '5px 0px 0px 5px'
+  },
+  statusIndicatorText2Green:{
+    backgroundColor:'#39b620',
+    color: '#fff',
+    padding:'0 5px',
+    border:'1px solid #39b620',
+    borderRadius: '0px 5px 5px 0px'
+  },
+  statusIndicatorText2Orange:{
+    backgroundColor:'#eb8f2b',
+    color: '#fff',
+    padding:'0 5px',
+    border:'1px solid #eb8f2b',
+    borderRadius: '0px 5px 5px 0px'
+  },
+  statusIndicatorText2Blue:{
+    backgroundColor:'#007bc1',
+    color: '#fff',
+    padding:'0 5px',
+    border:'1px solid #007bc1',
+    borderRadius: '0px 5px 5px 0px'
+  },
+
+
+  containerBody:{
+    paddingLeft:'30px',
+    paddingRight:'30px'
+  },
+  bodyPara:{
+    paddingBottom:'15px'
+  },
+  title:{
+    paddingBottom:'15px',
+    fontWeight: 'bold'
+  },
+
+
   toolbar:{
     paddingLeft: 0
   },
