@@ -36,6 +36,8 @@ import './style.css';
 import styles from './styles/styleClasses';
 import Circle from './utilities/circle';
 
+import BrandImage from './utilities/eatonTransparent.svg';
+
 /*
 The container for the entire app, including the common side-navigation panel and the main body panel.
 */
@@ -64,10 +66,11 @@ class App extends React.Component {
         <div>
           <AppBar position="static" color="primary">
             <Toolbar className={classes.toolbar}>
-              <IconButton color="inherit" data-cy="menu-btn" onClick={() => this.toggleDrawer()}>
-                <MenuIcon />
-              </IconButton>
-              <Typography variant="h6" color="inherit">Selected Page Name</Typography>
+                <IconButton color="inherit" data-cy="menu-btn" onClick={() => this.toggleDrawer()}>
+                  <MenuIcon />
+                </IconButton>
+              <Typography variant="h6" color="inherit">Resources</Typography>
+              <a style={{marginLeft:'auto',width:'80px'}} href='www.eaton.com'><img  src={BrandImage} /></a>
             </Toolbar>
           </AppBar>
 

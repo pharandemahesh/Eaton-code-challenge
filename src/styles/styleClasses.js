@@ -5,6 +5,13 @@
 
 
 const styles = theme => ({
+  bottomText:{
+    textAlign: 'center',
+    padding:'5px 0',
+    color:'#007bc1',
+    display:'block',
+    margin:'auto'
+  },
 
   statusIndicator:{
     display:'block',

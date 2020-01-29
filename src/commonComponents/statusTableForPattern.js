@@ -30,13 +30,13 @@ function getTableBody(props){
         <a href={item.title.titleUrl}>{item.title.name}</a>
       </TableCell>
       <TableCell align="right">
-        {getStatusIndicatorArray(item.npm,props)}
+        {getStatusIndicatorArray(item.status,props)}
       </TableCell>
       <TableCell align="right">
-        {getBuildStatus(item,props)}
+      {getBugReport(item,props)}
       </TableCell>
       <TableCell align="right">
-        {getBugReport(item,props)}
+      {getBuildStatus(item.liveDemo,props)}
       </TableCell>
     </TableRow>)
   })
@@ -58,29 +58,38 @@ function getBugReport(item,props){
 }
 
 function getBuildStatus(item,props){
-  let classText2 = props.classes.statusIndicatorText2Green;
-  if(item.buildStatus!=="passing"){
-    classText2 = props.classes.statusIndicatorText2Oranges;
-  }
- return(<StatusIndicator 
-  text1={"build"}
-  text2={item.buildStatus}
-  classes={props.classes}
-  classText2={classText2}
-      />) 
+let buildStatus = [];
+  item.forEach((item,index)=>{
+    buildStatus.push(
+      <a href={item.url} key={index}>
+      <StatusIndicator
+        text1={item.name}
+        text2={item.repo}
+        classes={props.classes}
+        classText2={props.classes.statusIndicatorText2Blue}
+      />
+      </a>
+    )
+  })
+ return(
+   <React.Fragment>
+  {buildStatus}
+  </React.Fragment>
+ ) 
 }
 
 
 function getStatusIndicatorArray(npmArray,props){
   let statusIndicatorArray = [];
-   npmArray.forEach((item,index)=>{
+  npmArray.forEach((item,index)=>{
+     let classText2 = item.status === 'passing' ? props.classes.statusIndicatorText2Green : props.classes.statusIndicatorText2Orange;
     statusIndicatorArray.push(
-      <a href={item.repoLink} key={index}>
+      <a href={item.url} key={index}>
         <StatusIndicator 
-          text1={item.repoName}
-          text2={item.repoVersion}
+          text1={item.name}
+          text2={item.status}
           classes={props.classes}
-          classText2={props.classes.statusIndicatorText2Blue}
+          classText2={classText2}
         />
       </a>
     )

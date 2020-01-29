@@ -4,6 +4,7 @@
     -moz-user-select: -moz-none;
     -o-user-select: none;
     user-select: none;
+    text-decoration: none;
 }
 
 body, h1, h2, h3, h4, p {
